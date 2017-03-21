@@ -1,0 +1,14 @@
+//
+// Created by Adam Johnson on 3/21/17.
+//
+
+#ifndef IT279GROUPPROJECT2_INSERTIONSORT_H
+#define IT279GROUPPROJECT2_INSERTIONSORT_H
+
+
+class InsertionSort {
+
+};
+
+
+#endif //IT279GROUPPROJECT2_INSERTIONSORT_H
