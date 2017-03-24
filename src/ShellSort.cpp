@@ -9,7 +9,7 @@
 //Hibbard starts at 1 then goes up 2^k -1
 void ShellSort::shellsort(std::vector<int> &a) {
     int gap,i,j,temp,size;
-    size = a.size();
+    size = a.size()+1;
     for (/* ht */gap = 1; gap > 0; gap = pow(2,size)-1 /* hk+1 */) {
         size--;
         for (i = gap; i < size; i++)
@@ -51,7 +51,7 @@ int main ( int argc, char *argv[] ) {
             cout << "invalid output file";
             exit(1);
         }
-        for(int i=0; i < input.size()-1; i++) {
+        for(int i=0; i < input.size(); i++) {
             output_file << input[i];
             output_file << "\n";
         }
