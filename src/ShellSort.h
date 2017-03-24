@@ -1,14 +1,16 @@
 //
 // Created by Adam Johnson on 3/21/17.
 //
-
-#ifndef UNTITLED_SHELLSORT_H
-#define UNTITLED_SHELLSORT_H
+#include <iostream>
+#include <vector>
+#ifndef IT279GroupProject2_SHELLSORT_H
+#define IT279GroupProject2_SHELLSORT_H
 
 
 class ShellSort {
-
+public:
+    void shellsort(std::vector<int> & a );
 };
 
 
-#endif //UNTITLED_SHELLSORT_H
+#endif //IT279GroupProject2_SHELLSORT_H
