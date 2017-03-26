@@ -28,6 +28,12 @@ void ShellSort::shellsort(std::vector<int> &a) {
 int main ( int argc, char *argv[] ) {
     using namespace std;
     ShellSort object; //test on
+    MergeSort Mergesort;
+    InsertionSort<int> insertionSort;
+
+    struct node<int>* a = NULL;
+
+
     if(argc !=3) {
         cout << "Invalid Input";
         exit(1);
@@ -42,9 +48,12 @@ int main ( int argc, char *argv[] ) {
     }
         while (getline(input_file, number)) {
             input.push_back(stoi(number));
+            insertionSort.push(&a, (int)number);
         }
         input_file.close();
         object.shellsort(input); /* run sorting algorithm */
+        Mergesort.sort(input,0,input.size());
+        insertionSort.sort(&a);
         ofstream output_file;
         output_file.open(argv[2],ios::out);
         if(!output_file.is_open()) {
