@@ -6,32 +6,44 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
-#include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
 #include "MergeSort.h"
-using namespace std;
-#define OUTFILE = "SortedFile.txt"
 
-int main() {
-	MergeSort q;
-	int i = 0;
-	int j;
-	std::vector<int> a;
-	std::vector<int> b;
-	while(i<10){
-		cin >> j;
-		a.push_back(j);
-		i++;
-	}
-	for (std::vector<int>::const_iterator i = a.begin(); i != a.end(); ++i)
-	    std::cout << *i << ' ';
-	q.sort(a,0,9);
-	cout<<endl;
-	for (std::vector<int>::const_iterator i = a.begin(); i != a.end(); ++i)
-		    std::cout << *i << ' ';
+int main ( int argc, char *argv[] ) {
+    using namespace std;
+    MergeSort Mergesort;
 
-	return 0;
+    if(argc !=3) {
+        cout << "Invalid Input";
+        exit(1);
+    }
+    //argsv[1] = input input_file, argsv[2] = output output_file (argsv[0] is the name of the program)
+    vector<int> input;
+    string number;
+    ifstream input_file(argv[1]);
+    if(!input_file.is_open()) {
+        cout << "Invalid File";
+        exit(1);
+    }
+        while (getline(input_file, number)) {
+            input.push_back(stoi(number));
+        }
+        input_file.close();
+        Mergesort.sort(input,0,input.size());
+        ofstream output_file;
+        output_file.open(argv[2],ios::out);
+        if(!output_file.is_open()) {
+            cout << "invalid output file";
+            exit(1);
+        }
+        for(int i=0; i < input.size(); i++) {
+            output_file << input[i];
+            output_file << "\n";
+        }
+    output_file.close();
+
+
 }
 

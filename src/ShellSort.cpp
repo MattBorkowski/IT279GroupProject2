@@ -28,7 +28,6 @@ void ShellSort::shellsort(std::vector<int> &a) {
 int main ( int argc, char *argv[] ) {
     using namespace std;
     ShellSort object; //test on
-    MergeSort Mergesort;
     InsertionSort<int> insertionSort;
 
     struct node<int>* a = NULL;
@@ -52,7 +51,6 @@ int main ( int argc, char *argv[] ) {
         }
         input_file.close();
         object.shellsort(input); /* run sorting algorithm */
-        Mergesort.sort(input,0,input.size());
         insertionSort.sort(&a);
         ofstream output_file;
         output_file.open(argv[2],ios::out);
